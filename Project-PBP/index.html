@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TOKO.POI - Home</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <div class="logo">TOKO.POI</div>
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="nav-link active">Home</a></li>
+                    <li><a href="products.html" class="nav-link">Products</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+            <div style="display: flex; align-items: center; gap: 1rem;">
+                <div class="search-container">
+                    <input type="text" class="search-input" placeholder="Search products...">
+                </div>
+                <div class="cart-icon" id="cartIcon">
+                    <span>🛒</span>
+                    <span class="cart-count">0</span>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <!-- Home Page -->
+        <section id="home" class="page active">
+            <div class="hero">
+                <h1>Welcome to TOKO.POI</h1>
+                <p>Your one-stop shop for all things anime - figures, comics, clothing, and more!</p>
+                <button class="cta-button">Shop Now</button>
+            </div>
+            <div class="features">
+                <div class="feature-card">
+                    <h3>Premium Figures</h3>
+                    <p>High-quality anime figures with detailed craftsmanship and vibrant colors.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Latest Comics</h3>
+                    <p>Get your hands on the latest manga and comic releases at competitive prices.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Stylish Apparel</h3>
+                    <p>Cool anime-themed clothing to show off your favorite characters.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+    <!-- Cart Modal -->
+    <div class="cart-modal" id="cartModal">
+        <div class="cart-content">
+            <div class="cart-header">
+                <h3>Your Cart</h3>
+                <button class="close-cart" id="closeCart">×</button>
+            </div>
+            <div class="cart-items" id="cartItems">
+                <!-- Cart items will be added here dynamically -->
+                <p style="text-align: center; color: #666;">Your cart is empty</p>
+            </div>
+            <div class="cart-total" id="cartTotal">Total: Rp 0</div>
+            <button class="checkout-btn" id="checkoutBtn">Proceed to Checkout</button>
+        </div>
+    </div>
+    <!-- Product Detail Modal -->
+    <div class="product-detail-modal" id="productDetailModal">
+        <div class="product-detail-content">
+            <div class="product-detail-header">
+                <h3 id="productDetailTitle">Product Name</h3>
+                <button class="close-product" id="closeProduct">×</button>
+            </div>
+            <img src="" alt="Product Image" class="product-detail-image" id="productDetailImage">
+            <div class="product-detail-price" id="productDetailPrice">Rp 0</div>
+            <div class="product-detail-stock" id="productDetailStock">Stock: 0</div>
+            <div class="product-description" id="productDescription">
+                This is a detailed description of the product. It includes information about the material, dimensions, and other important details that customers need to know before making a purchase.
+            </div>
+            <div class="rating-section">
+                <div class="rating-label">Rating:</div>
+                <div class="rating-stars" id="productRatingStars">
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                </div>
+                <div class="rating-count" id="productRatingCount">Based on 45 reviews</div>
+            </div>
+            <div class="product-actions">
+                <button class="buy-now-btn" id="buyNowBtn">Buy Now</button>
+                <button class="add-to-cart-btn" id="addToCartBtn">🛒 Add to Cart</button>
+            </div>
+        </div>
+    </div>
+    <!-- Notification -->
+    <div class="notification" id="notification">
+        Product added to cart!
+    </div>
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 TOKO.POI. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+    <script>
+        // Load products for home page if needed (e.g., featured items)
+        // For now, just initialize cart and modals on home page
+        document.addEventListener('DOMContentLoaded', function() {
+            // Ensure cart is initialized
+            if (!cart) cart = [];
+            updateCart();
+
+            // Attach event listeners that are specific to home page elements if needed
+            // (Currently, main listeners are in script.js and apply globally)
+        });
+    </script>
+</body>
+</html>

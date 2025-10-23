@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TOKO.POI - All Gundam</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <div class="logo">TOKO.POI</div>
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="products.html" class="nav-link active">Products</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+            <div style="display: flex; align-items: center; gap: 1rem;">
+                <div class="search-container">
+                    <input type="text" class="search-input" placeholder="Search products...">
+                </div>
+                <div class="cart-icon" id="cartIcon">
+                    <span>🛒</span>
+                    <span class="cart-count">0</span>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <div style="margin-bottom: 1rem;">
+            <a href="products.html" class="back-to-products">← Back to Products</a>
+        </div>
+        <h2 style="text-align: center; margin: 2rem 0;">All Gundam Models</h2>
+        <div class="products-grid" id="allGundamGrid">
+            <!-- All gundam will be loaded here -->
+        </div>
+    </div>
+    <!-- Cart Modal -->
+    <div class="cart-modal" id="cartModal">
+        <div class="cart-content">
+            <div class="cart-header">
+                <h3>Your Cart</h3>
+                <button class="close-cart" id="closeCart">×</button>
+            </div>
+            <div class="cart-items" id="cartItems">
+                <!-- Cart items will be added here dynamically -->
+                <p style="text-align: center; color: #666;">Your cart is empty</p>
+            </div>
+            <div class="cart-total" id="cartTotal">Total: Rp 0</div>
+            <button class="checkout-btn" id="checkoutBtn">Proceed to Checkout</button>
+        </div>
+    </div>
+    <!-- Product Detail Modal -->
+    <div class="product-detail-modal" id="productDetailModal">
+        <div class="product-detail-content">
+            <div class="product-detail-header">
+                <h3 id="productDetailTitle">Product Name</h3>
+                <button class="close-product" id="closeProduct">×</button>
+            </div>
+            <img src="" alt="Product Image" class="product-detail-image" id="productDetailImage">
+            <div class="product-detail-price" id="productDetailPrice">Rp 0</div>
+            <div class="product-detail-stock" id="productDetailStock">Stock: 0</div>
+            <div class="product-description" id="productDescription">
+                This is a detailed description of the product. It includes information about the material, dimensions, and other important details that customers need to know before making a purchase.
+            </div>
+            <div class="rating-section">
+                <div class="rating-label">Rating:</div>
+                <div class="rating-stars" id="productRatingStars">
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                </div>
+                <div class="rating-count" id="productRatingCount">Based on 45 reviews</div>
+            </div>
+            <div class="product-actions">
+                <button class="buy-now-btn" id="buyNowBtn">Buy Now</button>
+                <button class="add-to-cart-btn" id="addToCartBtn">🛒 Add to Cart</button>
+            </div>
+        </div>
+    </div>
+    <!-- Notification -->
+    <div class="notification" id="notification">
+        Product added to cart!
+    </div>
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 TOKO.POI. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+    <script>
+        // Load gundam for this page when it loads
+        document.addEventListener('DOMContentLoaded', function() {
+            // Ensure cart is initialized
+            if (!cart) cart = [];
+            updateCart();
+            // Load all gundam
+            loadCategoryProducts('gundam');
+        });
+    </script>
+</body>
+</html>
